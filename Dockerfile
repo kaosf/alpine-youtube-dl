@@ -6,4 +6,3 @@ RUN apk --update --no-cache add ca-certificates && \
   echo '/usr/bin/youtube-dl $@' > /dl.sh
 WORKDIR /a
 ENTRYPOINT ["/bin/sh", "/dl.sh"]
-CMD []
