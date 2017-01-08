@@ -3,8 +3,8 @@
 ## Usage
 
 ```
-docker run -v `pwd`:/a --rm kaosf/alpine-youtube-dl https://youtu.be/abcXYZ12345
-docker run -v `pwd`:/a --rm kaosf/alpine-youtube-dl -u youremail -p yourpassword http://www.nicovideo.jp/watch/12345678
+sudo docker run -u $(id -u $USER):$(id -g $USER) -v `pwd`:/a --rm kaosf/alpine-youtube-dl https://youtu.be/abcXYZ12345
+sudo docker run -u $(id -u $USER):$(id -g $USER) -v `pwd`:/a --rm kaosf/alpine-youtube-dl -u youremail -p yourpassword http://www.nicovideo.jp/watch/12345678
 ```
 
 You must specify `-v /some/where:/a`. You cannot change `/a` to any other directories.
