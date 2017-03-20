@@ -9,6 +9,11 @@ sudo docker run -u $(id -u $USER):$(id -g $USER) -v `pwd`:/a --rm kaosf/alpine-y
 
 You must specify `-v /some/where:/a`. You cannot change `/a` to any other directories.
 
+## Image updates log
+
+- 2017-01-08T14:31:20+09:00
+- 2017-03-20T19:31:01+09:00
+
 ## References
 
 - youtube-dl: https://github.com/rg3/youtube-dl
