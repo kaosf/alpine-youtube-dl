@@ -1,8 +1,8 @@
-FROM frolvlad/alpine-python3
+FROM alpine:3.8
 MAINTAINER kaosf <ka.kaosf@gmail.com>
-RUN apk --update --no-cache add ca-certificates && \
-  rm -rf /var/cache/apk/* && \
-  pip install --upgrade youtube-dl && \
-  echo '/usr/bin/youtube-dl $@' > /dl.sh
+# ref. https://github.com/rg3/youtube-dl#installation
+RUN apk --update --no-cache add python && \
+  wget https://github.com/rg3/youtube-dl/releases/download/2018.09.10/youtube-dl -O /bin/youtube-dl && \
+  chmod a+rx /bin/youtube-dl
 WORKDIR /a
-ENTRYPOINT ["/bin/sh", "/dl.sh"]
+ENTRYPOINT ["/bin/youtube-dl"]
